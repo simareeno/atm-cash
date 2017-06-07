@@ -34,6 +34,40 @@ function dealWithInput(targetInput) {
 	$(targetInput).val(sendBack);
 }
 
+let userData = {
+	'currentSum': 0
+};
+
+// function updateData() {
+// 	$('.currentAccountNumber').text(currentAccountNumber);
+// }
+
+function updateStorage() {
+	localStorage.setItem('atm', JSON.stringify(data));
+	// updateData();
+}
+
+// Если данных нет, загружаем
+if (localStorage.length == 0) {
+	localStorage.setItem('atm', JSON.stringify(userData));
+}
+
+// Получаем данные
+let data = JSON.parse(localStorage.getItem('atm'));
+
+// Вбиваем данные
+// updateData();
+
+$('.button-exchange').click(function () {
+	let current = $('.input-sum').val();
+	if (current.length === 0) {
+		return;
+	}
+	let sum = parseInt(current.replace(/\s+/g, ''));
+	data.currentSum = sum;
+	updateStorage();
+});
+
 $('.input-sum').on('keydown keyup', function () {
 	dealWithInput(this);
 });

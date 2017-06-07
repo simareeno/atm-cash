@@ -6,4 +6,5 @@ inputMask = require('jquery-mask-plugin');
 $(function () {
 	require('./logic.js');
 	require('./input-masks.js');
+	require('./storage.js');
 });
