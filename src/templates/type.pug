@@ -1,9 +1,12 @@
 include parts/head.pug
-body.initial
+body.type
 	include parts/header.pug
 	.title.title--center-center Введите сумму
-	input.input(type="text").input--center
+	.input-wrapper
+		input.input.input-sum(autofocus="true" pattern="[0-9]*" inputmode="numeric").input--center
+		span.rouble.rouble--grey ₽
+	a(href="exchange.html").button.button--left.button--3.button-exchange Выбрать размен
 	a(href="index.html").button.button--left.button--4.button--icon.button--icon-back Назад
-	.button.button--right.button--4 Другая сумма
+	.button.button--right.button--4.button--success.button-apply Получить
 	
 include parts/footer.pug

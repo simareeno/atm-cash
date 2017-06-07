@@ -1,5 +1,35 @@
 include parts/head.pug
-body.initial
+body.exchange
 	include parts/header.pug
+	.sum 3000 ₽
+	.banknotes
+		.banknotes__row.banknotes__row-100
+			span.banknote 100 ₽
+			span.banknotes-number 
+				span.banknotes-number__x ×
+				span.banknotes-number__number 5
+		.banknotes__row.banknotes__row-500
+			span.banknote 500 ₽
+			span.banknotes-number 
+				span.banknotes-number__x ×
+				span.banknotes-number__number 5
+		.banknotes__row.banknotes__row-5000
+			span.banknote 5 000 ₽
+			span.banknotes-number 
+				span.banknotes-number__x ×
+				span.banknotes-number__number 5
+		.banknotes__row.banknotes__row-5000
+			span.banknote 5 000 ₽
+			span.banknotes-number 
+				span.banknotes-number__x ×
+				span.banknotes-number__number 5
+	.available-banknotes 
+		|В банкомате есть купюры 
+		br
+		| 500 ₽, 1 000 ₽ и 5 000 ₽
+	a(href="type.html").button.button--left.button--4.button--icon.button--icon-back Назад
+	.button.button--right.button--2.button--icon.button--icon-plus Крупнее
+	.button.button--right.button--3.button--icon.button--icon-minus Мельче
+	.button.button--right.button--4.button--success.button-apply Получить
 	
 include parts/footer.pug

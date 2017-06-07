@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	user-select: none;
 }
 
 html {
@@ -63,6 +64,10 @@ a {
 		border-right: none;
 	}
 
+	&--success {
+		border-color: #8FCC02;
+	}
+
 	&--1 {
 		top: 211px;
 	}
@@ -98,11 +103,33 @@ a {
 			height: 22px;
 		}
 	}
+
+	&--icon-plus {
+		&:before {
+			background-image: url(../images/plus.png);
+			width: 22px;
+			height: 22px;
+		}
+	}
+
+	&--icon-minus {
+		&:before {
+			background-image: url(../images/minus.png);
+			width: 22px;
+			height: 3px;
+			transform: translate(0,9px);
+		}
+	}
 }
 
-.input {
-	border: none;
-	outline: 0;
-	font-size: 36px;
-	color: black;
+
+
+.rouble {
+	.big_text;
+	margin-left: 10px;
+
+	&--grey {
+		margin: 0;
+		color: #BDBDBD;
+	}
 }
