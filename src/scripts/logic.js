@@ -38,34 +38,36 @@ let userData = {
 	'currentSum': 0
 };
 
-// function updateData() {
-// 	$('.currentAccountNumber').text(currentAccountNumber);
-// }
+function updateData() {
+	if ($('.sum').length !== 0) {
+		let sum = numberWithSpaces(data.currentSum);
+		$('.sum').text(sum + ' ₽');
+	}
+}
 
 function updateStorage() {
 	localStorage.setItem('atm', JSON.stringify(data));
-	// updateData();
+	updateData();
 }
 
 // Если данных нет, загружаем
-if (localStorage.length == 0) {
+if (!localStorage.atm) {
 	localStorage.setItem('atm', JSON.stringify(userData));
 }
 
 // Получаем данные
-let data = JSON.parse(localStorage.getItem('atm'));
+var data = JSON.parse(localStorage.getItem('atm'));
 
 // Вбиваем данные
-// updateData();
+updateData();
 
-$('.button-exchange').click(function () {
+$('.button-exchange').click(function (e) {
+	e.preventDefault();
 	let current = $('.input-sum').val();
-	if (current.length === 0) {
-		return;
-	}
 	let sum = parseInt(current.replace(/\s+/g, ''));
 	data.currentSum = sum;
 	updateStorage();
+	window.location.href = 'exchange.html';
 });
 
 $('.input-sum').on('keydown keyup', function () {
