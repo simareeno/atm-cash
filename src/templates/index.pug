@@ -1,14 +1,25 @@
 include parts/head.pug
 body.initial
-	include parts/header.pug
-	.title.title--top-left Выберите сумму для выдачи
-	.button.button--left.button--1 500 ₽
-	.button.button--left.button--2 1 000 ₽
-	.button.button--left.button--3 2 000 ₽
-	.button.button--left.button--4.button--icon.button--icon-back Назад
-	.button.button--right.button--1 3 000 ₽
-	.button.button--right.button--2 5 000 ₽
-	.button.button--right.button--3 10 000 ₽
-	a(href="type.html").button.button--right.button--4 Другая сумма
+	.back
+		svg(width='34px', height='26px', viewbox='0 0 34 26')
+			g(transform='translate(2.000000, 2.000000)', stroke-width='3.4000001', fill='none', fill-rule='evenodd', stroke-linecap='round', stroke-linejoin='round')
+				polyline(points='11.0322173 0 0 10.8281451 11.0322173 21.5737789')
+				path(d='M2.20491803,10.66 L29.3613922,10.66')
+	.title.title--left.title--top-sum Введите сумму
+	.subtitle.subtitle-sum Вы можете снять от 100 ₽ до 200 000 ₽
+	.input-wrapper
+		span.input-cash
+		span.rouble.rouble--grey ₽
+	.buttons-actions
+		.button.button--left.button--4.button--icon Выбрать размен
+		a(href="type.html").button.button--right.button--4.button--success Подтвердить
+	.buttons-sums.buttons-sums--active
+		.button.button-sum 500 ₽
+		.button.button-sum 1000 ₽
+		.button.button-sum 2000 ₽
+		.button.button-sum 3000 ₽
+		.button.button-sum 5000 ₽
+		.button.button-sum 10000 ₽
+		.button.button-sum 15000 ₽
 	
 include parts/footer.pug
