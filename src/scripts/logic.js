@@ -1,38 +1,6 @@
 function numberWithSpaces(x) {
-	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u2009');
 }
-
-// function dealWithInput(targetInput) {
-// 	let current = $(targetInput).val();
-// 	let signs = current.length;
-//     let sendBack = 0;
-//     let currentNumber;
-//
-//     console.log(current);
-//
-//     if (signs > 0) {
-//         $('.rouble').removeClass('rouble--grey');
-//     } else {
-//         $('.rouble').addClass('rouble--grey');
-//     }
-//
-//     if (current === '') {
-//         console.log('true');
-//         currentNumber = parseInt(current.replace(/\s+/g, ''));
-//     } else {
-//         currentNumber = parseInt(current.replace(/\s+/g, ''));
-//     	sendBack = numberWithSpaces(currentNumber);
-//     }
-//
-//     if (sendBack === 0) {
-//         sendBack = ''
-//     }
-//
-//     $('.input-span').text(sendBack);
-//     let spanWidth = $('.input-span').width() * 1.1;
-//     $(targetInput).width(spanWidth);
-// 	$(targetInput).val(sendBack);
-// }
 
 let userData = {
 	'currentSum': 0
@@ -67,13 +35,24 @@ function showNumber(x) {
 	x = parseInt(x.replace(/\s+/g, ''));
 	if (isNaN(x)) {
 		$('.input-cash').text('');
-		$('.rouble').addClass('rouble--grey');
+		$('.input-wrapper .rouble').addClass('rouble--grey');
+		$('.input-cursor').addClass('input-cursor--active');
 	} else if (x < 1) {
 		$('.input-cash').text('');
-		$('.rouble').addClass('rouble--grey');
+		$('.input-wrapper .rouble').addClass('rouble--grey');
+		$('.input-cursor').addClass('input-cursor--active');
 	} else {
 		x = numberWithSpaces(x);
+		$('.input-cursor').removeClass('input-cursor--active');
 		$('.input-cash').text(x);
+	}
+
+	if (x >= 100) {
+		$('.buttons-sums').removeClass('buttons-sums--active');
+		$('.buttons-actions').addClass('buttons-actions--active');
+	} else if (x < 100) {
+		$('.buttons-sums').addClass('buttons-sums--active');
+		$('.buttons-actions').removeClass('buttons-actions--active');
 	}
 }
 
