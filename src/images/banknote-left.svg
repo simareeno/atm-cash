@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="36px" viewBox="0 0 16 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>banknote-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="fantasy_UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cash_02-copy-3" transform="translate(-33.000000, -333.000000)" fill="#FFFFFF">
+            <g id="Group-7" transform="translate(30.000000, 330.000000)">
+                <g id="banknote-left" transform="translate(3.000000, 3.000000)">
+                    <path d="M0,0 L15.9770642,0 L15.9770642,36 L0,36 L0,0 Z M8,12 C10.209139,12 12,10.209139 12,8 C12,5.790861 10.209139,4 8,4 C5.790861,4 4,5.790861 4,8 C4,10.209139 5.790861,12 8,12 Z" id="mask"></path>
+                    <circle id="circ" opacity="0.349999994" cx="8" cy="8" r="4"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

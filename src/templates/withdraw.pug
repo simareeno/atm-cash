@@ -1,5 +1,5 @@
 include parts/head.pug
-body.initial
+body.withdraw
 	.atm
 		a(href="index.html").back
 			svg(width='34px', height='26px', viewbox='0 0 34 26')
@@ -8,27 +8,40 @@ body.initial
 					path(d='M2.20491803,10.66 L29.3613922,10.66')
 		.title.title--left.title--top-sum Введите сумму
 		.subtitle.subtitle-sum Вы можете снять от 100 ₽ до 200 000 ₽
+		.button.chosen-value
+			span.chosen-value__sum
+			span.rouble &nbsp;₽
+			span.chosen-value__close
+				svg(width='16', height='16', viewbox='0 0 16 16', xmlns='http://www.w3.org/2000/svg')
+					path(d='M8 8l-6.906 6.906L8 8 1.094 1.094 8 8l6.906-6.906L8 8l6.906 6.906z', stroke-width='2', stroke='#979797', fill='none', fill-rule='evenodd', stroke-linecap='round', stroke-linejoin='round')
 		.input-wrapper
 			span.input-cursor.input-cursor--active
 			span.input-cash
 			span.rouble.rouble--grey ₽
 		.buttons-actions
-			.button.button--left.button--4.button--icon Выбрать размен
-			a(href="type.html").button.button--right.button--4.button--success Подтвердить
+			a(href="exchange.html").button.button--left.button--4.button-exchange Выбрать размен
+			a(href="success.html").button.button--right.button--4.button--success Подтвердить
 		.buttons-sums.buttons-sums--active
-			.button.button-sum 500 
+			.button.button-sum 
+				span.button-sum__value 500 
 				span.rouble ₽
-			.button.button-sum 1&thinsp;000 
+			.button.button-sum 
+				span.button-sum__value 1&thinsp;000 
 				span.rouble ₽
-			.button.button-sum 2&thinsp;000 
+			.button.button-sum 
+				span.button-sum__value 2&thinsp;000 
 				span.rouble ₽
-			.button.button-sum 3&thinsp;000 
+			.button.button-sum 
+				span.button-sum__value 3&thinsp;000 
 				span.rouble ₽
-			.button.button-sum 5&thinsp;000 
+			.button.button-sum 
+				span.button-sum__value 5&thinsp;000 
 				span.rouble ₽
-			.button.button-sum 10&thinsp;000 
+			.button.button-sum 
+				span.button-sum__value 10&thinsp;000 
 				span.rouble ₽
-			.button.button-sum 15&thinsp;000 
+			.button.button-sum 
+				span.button-sum__value 15&thinsp;000 
 				span.rouble ₽
 	
 include parts/footer.pug

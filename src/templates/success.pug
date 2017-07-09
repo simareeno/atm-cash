@@ -1,0 +1,30 @@
+include parts/head.pug
+body.success
+	.atm
+		.title-icon
+			svg(width='93', height='49', viewbox='0 0 93 49', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+				defs
+					path#a(d='M0 0h74.47v32H0z')
+					path#b(d='M0 0h74.47v32H0z')
+				g(fill='none', fill-rule='evenodd')
+					g
+						use(fill='#FFF', xlink:href='#a')
+						path(stroke='#D5B375', stroke-width='3', d='M1.5 1.5h71.47v29H1.5z')
+						path(fill='#D5B375', d='M2.71 1.667h55.54v29.26H2.71z')
+						rect(fill='#D5B375', opacity='.5', x='39.627', y='5.726', width='28.695', height='3', rx='1.5')
+						ellipse(fill='#D5B375', opacity='.511', cx='65.418', cy='23.074', rx='2.904', ry='2.863')
+					g(transform='translate(15 14)')
+						use(fill='#FFF', xlink:href='#b')
+						path(stroke='#98748B', stroke-width='3', d='M1.5 1.5h71.47v29H1.5z')
+						path(stroke='#FFF', stroke-width='3', d='M-1.5-1.5h77.47v35H-1.5z')
+						path(fill='#98748B', d='M2.71 1.667h55.54v29.26H2.71z')
+						rect(fill='#98748B', opacity='.5', x='39.627', y='5.726', width='28.695', height='3', rx='1.5')
+						ellipse(fill='#98748B', opacity='.511', cx='65.418', cy='23.074', rx='2.904', ry='2.863')
+						text(font-family='SFUIDisplay-Regular, SF UI Display', font-size='17', fill='#FFF')
+							tspan(x='6.832', y='23.231') ₽
+		.title.title--top-success Возьмите ваши деньги
+		.subtitle.subtitle-success Купюры будут доступны  в течение 30 секунд
+		a(href="index.html").button.button--left.button--4 Другие операции
+		.button.button--right.button--4.button--success Вернуть карту
+	
+include parts/footer.pug

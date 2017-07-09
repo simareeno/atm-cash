@@ -1,6 +1,26 @@
+.exchange-buttons {
+	position: absolute;
+	top: 269px;
+	right: 30px;
+
+	&__larger {
+		right: 0;
+	}
+
+	&__smaller {
+		right: 0;
+		top: 90px;
+	}
+}
+
+.title--top-exchange {
+	top: 148px;
+}
+
 .sum {
-	.big_text;
-	margin-top: 72px;
+	font-size: 22px;
+	color: fade(@primary, 70%);
+	margin-top: 193px;
 	padding-left: 30px;
 }
 
@@ -13,43 +33,42 @@
 }
 
 .banknotes {
-	margin-top: 32px;
-	margin-left: 30px;
-	.paragraph_text;
+	position: absolute;
+	top: 270px;
+	left: 30px;
 
 	&__row {
-		// display: none;
-
-		& + & {
-			margin-top: 20px;
-		}
-
-		&-100 {
-			.banknote {
-				background-color: #cebdce;
-			}
-		}
-
-		&-500 {
-			.banknote {
-				background-color: #cebdce;
-			}
-		}
-
-		&-1000 {
-			.banknote {
-				background-color: fade(#8FCC02, 33%);
-			}
-		}
+		display: flex;
+		align-items: center;
+		opacity: 0;
+		transform: translate(0, 10px);
+		margin-bottom: 0px;
+		height: 0;
+		transition: transform .35s ease-in-out, opacity .35s ease-in-out, height .35s ease-in-out;
 
 		&-5000 {
-			.banknote {
-				background-color: fade(#CC6602, 33%);
-			}
+			transform: translate(0, 10px);
 		}
+
+		&--active {
+			transform: translate(0, 0);
+			height: 42px;
+			opacity: 1;
+			margin-bottom: 20px;
+		}
+
+		.banknote {
+			display: inline-flex;
+		}
+
+		// & + & {
+		// 	margin-top: 20px;
+		// }
 	}
 
 	&-number {
+		font-weight: 500;
+		font-size: 22px;
 
 		&__x {
 			margin-left: 10px;
@@ -58,8 +77,46 @@
 }
 
 .banknote {
-	padding: 10px 0;
-	width: 92px;
-	display: inline-block;
+	padding: 3px;
+	width: 98px;
+	display: flex;
 	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+
+	&__value {
+		flex-grow: 1;
+		text-align: left;
+		padding-left: 3px;
+	}
+
+	&__left, &__right {
+		width: 16px;
+		height: 36px;
+	}
+
+	&__left {
+		background: url(../images/banknote-left.svg);
+	}
+
+	&__right {
+		background: url(../images/banknote-right.svg);
+	}
+
+	&-100 {
+		background-color: #C3AB80;
+	}
+
+	&-500 {
+		background-color: #98748B;
+	}
+
+	&-1000 {
+		background-color: #9CB1B3;
+	}
+
+	&-5000 {
+		background-color: fade(#CC6602, 50%);
+	}
 }

@@ -6,29 +6,45 @@ body.exchange
 				g(transform='translate(2.000000, 2.000000)', stroke-width='3.4000001', fill='none', fill-rule='evenodd', stroke-linecap='round', stroke-linejoin='round')
 					polyline(points='11.0322173 0 0 10.8281451 11.0322173 21.5737789')
 					path(d='M2.20491803,10.66 L29.3613922,10.66')
+		.title.title--left.title--top-exchange Выберите размен
+		.sum
 		.banknotes
-			.banknotes__row.banknotes__row-100
-				span.banknote 100 ₽
-				span.banknotes-number 
-					span.banknotes-number__x × 
-					span.banknotes-number__number 0
-			.banknotes__row.banknotes__row-500
-				span.banknote 500 ₽
+			.banknotes__row.banknotes__row-5000
+				.banknote.banknote-5000
+					.banknote__left
+					.banknote__value 5 000
+					.banknote__right
 				span.banknotes-number 
 					span.banknotes-number__x × 
 					span.banknotes-number__number 5
 			.banknotes__row.banknotes__row-1000
-				span.banknote 5 000 ₽
+				.banknote.banknote-1000 
+					.banknote__left
+					.banknote__value 1 000
+					.banknote__right
 				span.banknotes-number 
 					span.banknotes-number__x × 
 					span.banknotes-number__number 5
-			.banknotes__row.banknotes__row-5000
-				span.banknote 5 000 ₽
+			.banknotes__row.banknotes__row-500
+				.banknote.banknote-500 
+					.banknote__left
+					.banknote__value 500
+					.banknote__right
 				span.banknotes-number 
 					span.banknotes-number__x × 
 					span.banknotes-number__number 5
-		.button.button--right.button--2.button--icon.button--icon-plus Крупнее
-		.button.button--right.button--3.button--icon.button--icon-minus Мельче
+			.banknotes__row.banknotes__row-100
+				.banknote.banknote-100 
+					.banknote__left
+					.banknote__value 100
+					.banknote__right
+				span.banknotes-number 
+					span.banknotes-number__x × 
+					span.banknotes-number__number 0
+			
+		.exchange-buttons
+			.button.exchange-buttons__larger.button--disabled Крупнее
+			.button.exchange-buttons__smaller Мельче
 		.button.button--right.button--4.button--success.button-apply Подтвердить
 	
 include parts/footer.pug

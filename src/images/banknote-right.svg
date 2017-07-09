@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="36px" viewBox="0 0 16 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>banknote-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="fantasy_UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cash_02-copy-3" transform="translate(-109.000000, -333.000000)" fill="#FFFFFF">
+            <g id="Group-7" transform="translate(30.000000, 330.000000)">
+                <g id="banknote-right" transform="translate(79.000000, 3.000000)">
+                    <path d="M0,0 L15.9770642,0 L15.9770642,36 L0,36 L0,0 Z M0,3 L0,6 L10.5,6 C11.3284271,6 12,5.32842712 12,4.5 L12,4.5 C12,3.67157288 11.3284271,3 10.5,3 L10.5,3 L0,3 Z M4,24 L4,32 L12,32 L12,24 L4,24 Z" id="mask"></path>
+                    <path d="M0,3 L10.5,3 L10.5,3 C11.3284271,3 12,3.67157288 12,4.5 L12,4.5 L12,4.5 C12,5.32842712 11.3284271,6 10.5,6 L0,6 L0,3 Z" id="line" opacity="0.349999994"></path>
+                    <rect id="rect" opacity="0.349999994" x="4" y="24" width="8" height="8"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
