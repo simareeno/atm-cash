@@ -11,7 +11,7 @@ let userData = {
 const denominations = [5000, 1000, 500, 100];
 let combs = [];
 let currentComb;
-let combStep = 10;
+let combStep = 1;
 
 function updateData() {
 	if ($('.sum').length !== 0) {
