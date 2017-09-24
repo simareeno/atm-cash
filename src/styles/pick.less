@@ -1,0 +1,136 @@
+.banknotes-picker {
+	display: flex;
+	width: 510px;
+	justify-content: space-between;
+	top: 250px;
+}
+
+.picker-sum {
+	position: absolute;
+	left: 30px;
+	top: 450px;
+	font-size: 36px;
+	font-weight: @medium;
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+
+	&__value {
+		margin-right: 10px;
+	}
+
+	&--active {
+		opacity: 1;
+	}
+}
+
+.picker-clear {
+	position: absolute;
+	top: 450px;
+	left: 215px;
+	font-size: 26px;
+	color: fade(@primary, 40%);
+	tarnsform: translate(0, 1px);
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+
+	&--active {
+		opacity: 1;
+	}
+
+	&:before {
+		content: '';
+		display: inline-flex;
+		background-image: url(../images/close.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 24px;
+		height: 24px;
+		margin-right: 10px;
+		transform: translate(0, 3px);
+	}
+}
+
+.banknote--new {
+	position: absolute;
+	transform-origin: left;
+
+	&.banknote-100 {
+		animation: b100 .2s ease-in-out forwards;
+	}
+
+	&.banknote-500 {
+		animation: b500 .2s ease-in-out forwards;
+	}
+
+	&.banknote-1000 {
+		animation: b1000 .2s ease-in-out forwards;
+	}
+
+	&.banknote-5000 {
+		animation: b5000 .2s ease-in-out forwards;
+	}
+}
+
+@keyframes b100 {
+	0% {
+		top: 250px;
+		left: 30px;
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(1.1) perspective(150px) rotateX(-20deg);
+	}
+	100% {
+		top: 534px;
+		left: 30px;
+		transform: scale(0.7);
+	}
+}
+
+@keyframes b500 {
+	0% {
+		top: 250px;
+		left: 167px;
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(1.1) perspective(150px) rotateX(-20deg);
+	}
+	100% {
+		top: 534px;
+		left: 115px;
+		transform: scale(0.7);
+	}
+}
+
+@keyframes b1000 {
+	0% {
+		top: 250px;
+		left: 305px;
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(1.1) perspective(150px) rotateX(-20deg);
+	}
+	100% {
+		top: 534px;
+		left: 200px;
+		transform: scale(0.7);
+	}
+}
+
+@keyframes b5000 {
+	0% {
+		top: 250px;
+		left: 442px;
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(1.1) perspective(150px) rotateX(-20deg);
+	}
+	100% {
+		top: 534px;
+		left: 285px;
+		transform: scale(0.7);
+	}
+}

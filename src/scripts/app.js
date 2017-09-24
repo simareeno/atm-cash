@@ -3,8 +3,7 @@
 $ = require('jquery');
 inputMask = require('jquery-mask-plugin');
 
-$(function () {
+$(function() {
 	require('./logic.js');
-	require('./input-masks.js');
-	require('./storage.js');
+	require('./picker.js');
 });
