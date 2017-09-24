@@ -19,7 +19,32 @@ function addBanknote(value) {
 	banknote.append(banknoteValue);
 	banknote.append(banknoteRight);
 
-	$('.atm').append(banknote);
+	let pickContainer = $('.picked-' + value);
+
+	pickContainer.append(banknote);
+	pickContainer.addClass('picked__pack--active');
+
+	let initialLeft = $('.banknote-main.banknote-' + value)[0].offsetLeft;
+	let finalLeft = pickContainer[0].offsetLeft;
+
+	pickContainer.find('.banknote--new').css('left', finalLeft);
+
+	banknotesArray = [100, 500, 1000, 5000];
+
+	for (var i = 0; i < banknotesArray.length; i++) {
+		let pickedLeft = $('.picked-' + banknotesArray[i])[0].offsetLeft;
+		$('.picked-' + banknotesArray[i] + ' .banknote--new').css(
+			'left',
+			pickedLeft
+		);
+	}
+
+	TweenMax.fromTo(
+		banknote,
+		0.2,
+		{ css: { left: initialLeft } },
+		{ css: { left: finalLeft } }
+	);
 
 	pickSum += value;
 	$('.picker-sum__value').text(numberWithSpaces(pickSum));
@@ -27,9 +52,9 @@ function addBanknote(value) {
 
 function resetPick() {
 	pickSum = 0;
-	$('.picker-sum__value').text(numberWithSpaces(pickSum));
 	inactivePick();
-	$('.banknote--new').hide();
+	$('.picked__pack').removeClass('picked__pack--active');
+	$('.banknote--new').remove();
 }
 
 function activePick() {
@@ -51,6 +76,7 @@ $('.banknote').click(function() {
 });
 
 $('.picker-clear').click(resetPick);
+
 $('.pick .button').click(function() {
 	window.location.href = 'success.html';
 });

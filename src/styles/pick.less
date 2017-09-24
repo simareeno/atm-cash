@@ -50,87 +50,40 @@
 	}
 }
 
+.picked {
+	position: absolute;
+	left: 30px;
+	bottom: 30px;
+	width: 50%;
+	height: 42px;
+	display: flex;
+	justify-content: flex-start;
+
+	&__pack {
+		display: block;
+		// transition: width .2s ease-in-out;
+
+		&--active {
+			width: 25%;
+		}
+	}
+}
+
 .banknote--new {
 	position: absolute;
 	transform-origin: left;
-
-	&.banknote-100 {
-		animation: b100 .2s ease-in-out forwards;
-	}
-
-	&.banknote-500 {
-		animation: b500 .2s ease-in-out forwards;
-	}
-
-	&.banknote-1000 {
-		animation: b1000 .2s ease-in-out forwards;
-	}
-
-	&.banknote-5000 {
-		animation: b5000 .2s ease-in-out forwards;
-	}
+	transition: top .2s ease-in-out;
+	animation: new-banknote .2s ease-in-out forwards;
 }
 
-@keyframes b100 {
+@keyframes new-banknote {
 	0% {
-		top: 250px;
-		left: 30px;
-		transform: scale(1);
+		transform: scale(1) translate(0, -250px);
 	}
 	33% {
-		transform: scale(1.1) perspective(150px) rotateX(-20deg);
+		transform: perspective(150px) rotateX(-20deg);
 	}
 	100% {
-		top: 534px;
-		left: 30px;
-		transform: scale(0.7);
-	}
-}
-
-@keyframes b500 {
-	0% {
-		top: 250px;
-		left: 167px;
-		transform: scale(1);
-	}
-	33% {
-		transform: scale(1.1) perspective(150px) rotateX(-20deg);
-	}
-	100% {
-		top: 534px;
-		left: 115px;
-		transform: scale(0.7);
-	}
-}
-
-@keyframes b1000 {
-	0% {
-		top: 250px;
-		left: 305px;
-		transform: scale(1);
-	}
-	33% {
-		transform: scale(1.1) perspective(150px) rotateX(-20deg);
-	}
-	100% {
-		top: 534px;
-		left: 200px;
-		transform: scale(0.7);
-	}
-}
-
-@keyframes b5000 {
-	0% {
-		top: 250px;
-		left: 442px;
-		transform: scale(1);
-	}
-	33% {
-		transform: scale(1.1) perspective(150px) rotateX(-20deg);
-	}
-	100% {
-		top: 534px;
-		left: 285px;
-		transform: scale(0.7);
+		transform: scale(0.7) translate(0, 0);
 	}
 }
