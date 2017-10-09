@@ -1,4 +1,9 @@
 let pickSum = 0;
+let pickedObj = {};
+pickedObj.b100 = 0;
+pickedObj.b500 = 0;
+pickedObj.b1000 = 0;
+pickedObj.b5000 = 0;
 
 function numberWithSpaces(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u2009');
@@ -24,20 +29,46 @@ function addBanknote(value) {
 	pickContainer.append(banknote);
 	pickContainer.addClass('picked__pack--active');
 
+	switch (value) {
+		case 100:
+			pickedObj.b100++;
+			break;
+		case 500:
+			pickedObj.b500++;
+			break;
+		case 1000:
+			pickedObj.b1000++;
+			break;
+		case 5000:
+			pickedObj.b5000++;
+			break;
+	}
+
 	let initialLeft = $('.banknote-main.banknote-' + value)[0].offsetLeft;
 	let finalLeft = pickContainer[0].offsetLeft;
+	let banknotesArray = [100, 500, 1000, 5000];
 
 	pickContainer.find('.banknote--new').css('left', finalLeft);
 
-	banknotesArray = [100, 500, 1000, 5000];
+	banknotesArray.map(function(number, index) {
+		let pickedLeft =
+			$('.picked-' + banknotesArray[index])[0].offsetLeft +
+			pickedObj['b' + number];
 
-	for (var i = 0; i < banknotesArray.length; i++) {
-		let pickedLeft = $('.picked-' + banknotesArray[i])[0].offsetLeft;
-		$('.picked-' + banknotesArray[i] + ' .banknote--new').css(
+		let pickedTop =
+			$('.picked-' + banknotesArray[index])[0].offsetLeft +
+			pickedObj['b' + number];
+
+		$('.picked-' + banknotesArray[index] + ' .banknote--new').css(
 			'left',
 			pickedLeft
 		);
-	}
+
+		$('.picked-' + banknotesArray[index] + ' .banknote--new').css(
+			'bottom',
+			pickedTop
+		);
+	});
 
 	TweenMax.fromTo(
 		banknote,
